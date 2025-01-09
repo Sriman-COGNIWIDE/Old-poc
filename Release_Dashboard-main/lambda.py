@@ -211,14 +211,22 @@ def clear_all_caches():
 
 def lambda_handler(event, context):
     try:
-        path = event.get('path', '')
-        print(f"Received path: {path}") 
+        path = event.get('path') or event.get('rawPath', '')
+        print(f"Received request with event: {json.dumps(event)}") 
+        print(f"Received path: {path}")
+        
+        http_method = event.get('httpMethod') or event.get('requestContext', {}).get('http', {}).get('method', 'GET')
+        
         if path.endswith('/'):
             path = path[:-1]
             
         if path == '/api/health':
             return {
                 'statusCode': 200,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 'body': json.dumps({
                     'status': 'healthy',
                     'date_time': get_formatted_datetime()
@@ -231,6 +239,10 @@ def lambda_handler(event, context):
         if not path_parts or path_parts[0] != 'api':
             return {
                 'statusCode': 400,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 'body': json.dumps({
                     'status': 'error',
                     'error': {
@@ -246,6 +258,10 @@ def lambda_handler(event, context):
             clear_all_caches()
             return {
                 'statusCode': 200,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 'body': json.dumps({
                     'status': 'success',
                     'message': 'All caches cleared successfully',
@@ -259,6 +275,10 @@ def lambda_handler(event, context):
             if env not in clusters:
                 return {
                     'statusCode': 404,
+                    'headers': {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
                     'body': json.dumps({
                         'status': 'error',
                         'error': {
@@ -272,6 +292,10 @@ def lambda_handler(event, context):
             
             return {
                 'statusCode': 200,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 'body': json.dumps({
                     'status': 'success',
                     'data': all_deployments,
@@ -285,6 +309,10 @@ def lambda_handler(event, context):
             if env not in clusters:
                 return {
                     'statusCode': 404,
+                    'headers': {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
                     'body': json.dumps({
                         'status': 'error',
                         'error': {
@@ -298,6 +326,10 @@ def lambda_handler(event, context):
             
             return {
                 'statusCode': 200,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 'body': json.dumps({
                     'status': 'success',
                     'data': all_deployments,
@@ -307,6 +339,10 @@ def lambda_handler(event, context):
             
         return {
             'statusCode': 404,
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
             'body': json.dumps({
                 'status': 'error',
                 'error': {
@@ -317,8 +353,13 @@ def lambda_handler(event, context):
         }
         
     except Exception as e:
+        print(f"Error in lambda_handler: {str(e)}")  # Log the error
         return {
             'statusCode': 500,
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
             'body': json.dumps({
                 'status': 'error',
                 'error': {
