@@ -1,0 +1,25 @@
+/* Pagination.css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font to table */
+    font-size: 16px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+  }
+  

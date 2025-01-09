@@ -1,0 +1,60 @@
+/* Main container for the dropdown and search bar */
+.dropdown-container {
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    margin-bottom: 20px;  /* Bottom margin to separate from other elements */
+    gap: 20px;  /* Add space between dropdowns and the search bar */
+  }
+  
+  /* For each dropdown item (env and cluster dropdowns) */
+  .dropdown-item {
+    display: flex;
+    align-items: center;  /* Keep label and input in the same line */
+    gap: 8px;  /* Space between label and input */
+  }
+
+  #env-label {
+    margin-left: 20px;  /* Adjust the left margin to move the label to the right */
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font to table */
+    font-size: 16px;
+  }
+  
+  /* For the search bar */
+  .search-bar {
+    display: flex;
+    align-items: center;  /* Keep label and input in the same line */
+    gap: 8px;  /* Space between label and input */
+  }
+  
+  /* Styling for select and input elements */
+  select {
+    padding: 8px;   
+    border: 1px solid #ccc;  
+    border-radius: 4px;  /* Rounded corners */
+    width: 250px;  
+    box-sizing: border-box;  /* Include padding and border in width calculation */
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font to table */
+    font-size: 16px;
+  }
+  input[type="text"] {
+    padding: 8px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    width: 250px;  
+    box-sizing: border-box;  
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font to table */
+    font-size: 16px;
+  }
+  
+  /* Responsive design - smaller screen sizes */
+  @media (max-width: 768px) {
+    .dropdown-container {
+      flex-direction: column;  /* Stack dropdowns and search bar vertically */
+      gap: 10px;  /* Add space between items */
+    }
+  
+    select, input[type="text"] {
+      width: 100%;  /* Ensure inputs take full width */
+    }
+  }
+  

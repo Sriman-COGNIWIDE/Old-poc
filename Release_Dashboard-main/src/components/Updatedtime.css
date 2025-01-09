@@ -1,0 +1,69 @@
+.time-display{
+    display: flex;
+    justify-content: right; /* Horizontal alignment */
+    padding-right: 30px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font globally */
+    font-size: 16px;
+  }
+  .time {
+    margin-right:0%;  /* Optional: Adjust space between time and button */
+  }
+
+  .time-display span {
+    margin-left: 5px; /* Space between ":" and the time */
+    font-weight: normal;
+  }
+  
+  .time-display .time {
+    font-weight:normal;
+  }
+
+  .time{
+    display: inline-block;
+    padding: 5px 10px; /* Adds padding for the box */
+    margin-left: 5px; /* Space between "Last Updated:" and the box */
+    background-color: #206cb8; /* Light grey background */
+    border: 1px solid #ccc; /* Adds a border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 14px; /* Adjust font size inside the box */
+    color: white; /* Text color */
+    text-align: center;
+  }
+
+  .time-display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .time {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #206cb8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-right: 0;  /* Remove right margin */
+  }
+  
+  .time-display span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+  
+  .time-display .time {
+    font-weight: normal;
+    margin-right: 0;
+  }
+
+ 
+  

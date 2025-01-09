@@ -1,0 +1,20 @@
+/* Styling for the navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #206cb8;
+    color: #fff;
+  }
+  
+  .logo {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font globally */
+    font-size: 18px; 
+  }
+  

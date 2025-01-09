@@ -1,0 +1,153 @@
+/* General table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-align: left;
+  table-layout: fixed;
+  overflow-x: auto;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Table headers */
+thead th {
+  background-color: #206cb8;
+  color: white;
+  padding: 5px 6px;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+  font-family: 'Poppins', sans-serif;  
+  font-size: 15px;
+  position: relative;
+}
+
+/* Table rows */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table cells */
+td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Set specific widths for columns */
+thead th:nth-child(1), tbody td:nth-child(1) {
+  width: 16%;           /* deployment name */   
+} 
+
+thead th:nth-child(2), tbody td:nth-child(2) {
+  width: 15%;           /* namespace */
+}
+
+thead th:nth-child(3), tbody td:nth-child(3) {
+  width: 10%;        /* cluster */
+}
+
+thead th:nth-child(4), tbody td:nth-child(4) {
+  width: 33%;          /* main container image */
+}
+
+thead th:nth-child(5), tbody td:nth-child(5) {
+  width: 10%;    /* version */
+}
+
+thead th:nth-child(6), tbody td:nth-child(6) {
+  width: 15%;         /* init container image */
+}
+
+/* Table container */
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Table container with shadow */
+.table {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+/* Table header content container */
+.table-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 4px;
+}
+
+/* Table heading */
+.table-heading {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+/* Sort arrows container */
+.sort-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Arrows styling */
+.arrow {
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+}
+
+.arrow:hover {
+  color: #ffffff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  td, th {
+    padding: 8px 10px;
+  }
+}
+
+/* Styling for monospaced font */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
